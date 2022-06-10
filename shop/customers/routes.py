@@ -17,7 +17,7 @@ def payment():
     invoice = request.form.get('invoice')
     amount = request.form.get('amount')
     customer = stripe.Customer.create(
-      email=request.form['stripeEmail'],
+      email='nguyendinhloc502@gmail.com',
       source=request.form['stripeToken'],
     )
     charge = stripe.Charge.create(
