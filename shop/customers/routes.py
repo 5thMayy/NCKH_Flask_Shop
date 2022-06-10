@@ -9,12 +9,12 @@ import json
 import pdfkit
 import stripe
 
-buplishable_key ='pk_test_MaILxTYQ15v5Uhd6NKI9wPdD00qdL0QZSl'
-stripe.api_key ='sk_test_9JlhVB6qwjcRdYzizjdwgIo0Dt00N55uxbWy'
+buplishable_key ='pk_test_51L8mi0JYOdLtiObUQ5bNpMDpOJxd8TIDMC8KjphHf8kdgEKscA4b9U7dnYIRUefgL93njCD3W727rGgteSB1748j00sj4EwFau'
+stripe.api_key ='sk_test_51L8mi0JYOdLtiObUHTMxgHH5HpxtXEsJsQRaye5qjSXbp9kejK2JYwzZtXjNAXgfpj6LPs3PHHx47EaaP99AVPp700kVZDtwxW'
 
 @app.route('/payment',methods=['POST'])
 def payment():
-    invoice = request.get('invoice')
+    invoice = request.form.get('invoice')
     amount = request.form.get('amount')
     customer = stripe.Customer.create(
       email=request.form['stripeEmail'],
@@ -61,7 +61,6 @@ def customerLogin():
             return redirect(next or url_for('home'))
         flash('Incorrect email and password','danger')
         return redirect(url_for('customerLogin'))
-            
     return render_template('customer/login.html', form=form)
 
 
