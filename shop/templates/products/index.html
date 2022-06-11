@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
 {% include 'navbar.html' %}
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
 <div class="container">
     <div class="row">
         {% if brand %}
@@ -10,7 +11,10 @@
                 <img src="{{url_for('static', filename='images/' + b.image_1)}}" class="card-img-top" alt="{{b.name}}" height="200" width="200">
                 <div class="card-body">
                     {% if b.discount > 0 %}
-                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{b.discount}}</h5>
+                    <div class="item_sale-off">
+                      <span class="item_sale-off-percent">{{b.discount}}%</span>
+                      <span class="item_sale-off-label">Giảm</span>
+                    </div>
                     {% endif %}
                   <h5 class="text-center">{{b.name}}</h5>
                   <p class="text-center">Price ${{b.price}}</p>
@@ -67,7 +71,10 @@
                 <img src="{{url_for('static', filename='images/' + get_cat.image_1)}}" class="card-img-top" alt="{{get_cat.name}}" height="200" width="200">
                 <div class="card-body">
                     {% if get_cat.discount > 0 %}
-                    <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{get_cat.discount}}</h5>
+                    <div class="item_sale-off">
+                      <span class="item_sale-off-percent">{{get_cat.discount}}%</span>
+                      <span class="item_sale-off-label">Giảm</span>
+                    </div>
                     {% endif %}
                   <h5 class="text-center">{{get_cat.name}}</h5>
                   <p class="text-center">Price ${{get_cat.price}}</p>
@@ -125,7 +132,10 @@
             <img src="{{url_for('static', filename='images/' + product.image_1)}}" class="card-img-top" alt="{{product.name}}" height="200" width="200">
             <div class="card-body">
                 {% if product.discount > 0 %}
-                <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg); position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{product.discount}}</h5>
+                <div class="item_sale-off">
+                  <span class="item_sale-off-percent">{{product.discount}}%</span>
+                  <span class="item_sale-off-label">Giảm</span>
+                </div>
                 {% endif %}
               <h5 class="text-center">{{product.name}}</h5>
               <p class="text-center">Price ${{product.price}}</p>

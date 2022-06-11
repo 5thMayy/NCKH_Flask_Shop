@@ -1,0 +1,37 @@
+.item_sale-off {
+    position: absolute;
+    right: 0;
+    top: 0; 
+    width: 40px;
+    height: 36px;
+    background-color: rgba(255,216,64,0.93);
+    text-align: center;
+
+}
+
+.item_sale-off::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    border-width: 0 20px 6px;
+    border-style: solid;
+    border-color:transparent rgba(255,216,64,0.93) transparent rgba(255,216,64,0.93);
+}
+
+.item_sale-off-percent {
+    color: #EE4D2D;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    position: relative;
+    top: -1;
+}
+
+.item_sale-off-label {
+    color: rgb(20, 16, 16);
+    font-size: 0.8rem;
+    position: relative;
+    font-weight: 600;
+    top: -9px;
+}
